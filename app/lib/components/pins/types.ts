@@ -99,3 +99,13 @@ export interface IRocket {
     rocket_type: string;
   };
 }
+
+
+export interface IRocketCard {
+  rocket: {
+    rocket_id: number;
+    rocket_name: string;
+    description: string;
+    flickr_images: string[];
+  };
+}

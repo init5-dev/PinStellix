@@ -4,7 +4,7 @@ import { IRocket } from './types'
 import SocialShare from "../SocialShare"
 import { usePathname } from "next/navigation"
 
-const Rocket = ({ rocket }: IRocket) => {
+const Rocket: React.FC<IRocket> = ({rocket}) => {
   const pathname = usePathname()
   const [currentUrl, setCurrentURL] = useState('')
 
@@ -13,15 +13,15 @@ const Rocket = ({ rocket }: IRocket) => {
   }, [pathname])
 
   return (
-    <div className='w-full flex flex-col lg:flex-row gap-8'>
-      <div className='flex flex-col gap-4'>
+    <div className='w-full lg:grid lg:grid-cols-3 flex flex-col gap-8'>
+      <div className='flex flex-col gap-4 col-span-1'>
         <figure>
           <img
             src={rocket.flickr_images[0]}
             alt={rocket.rocket_name}
             width={640}
             height={480}
-            className='w-full h-60 object-cover'
+            className='w-full object-cover'
           />
         </figure>
         <div className="flex flex-col gap-4 mb-4">
@@ -40,9 +40,9 @@ const Rocket = ({ rocket }: IRocket) => {
           <SocialShare postUrl={currentUrl} />
         </div>
       </div>
-      <div className='lg:grid lg:grid-cols-4 flex flex-col gap-4'>
+      <div className='md:grid md:grid-cols-4 flex flex-col gap-4 col-span-2'>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2 bg-base-200 -mx-4 -mt-4 p-2'>General</h3>
+          <h3 className='text-lg font-semibold -mx-4 bg-base-200 -mt-4 p-2'>General</h3>
           <p>
             <strong>Company:</strong> {rocket.company}
           </p>
