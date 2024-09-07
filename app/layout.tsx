@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
 import Drawer from './lib/components/Drawer'
-import Breadcrumb from "./lib/components/Breadcrumb"
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -30,7 +29,7 @@ export default function RootLayout ({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <Drawer children={children} />
+        <Drawer>{children}</Drawer>
       </body>
     </html>
   )

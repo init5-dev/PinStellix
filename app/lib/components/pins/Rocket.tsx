@@ -1,10 +1,10 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import { IRocket } from './types'
-import SocialShare from "../SocialShare"
-import { usePathname } from "next/navigation"
+import SocialShare from '../SocialShare'
+import { usePathname } from 'next/navigation'
 
-const Rocket: React.FC<IRocket> = ({rocket}) => {
+const Rocket = ({ rocket }: { rocket: IRocket }) => {
   const pathname = usePathname()
   const [currentUrl, setCurrentURL] = useState('')
 
@@ -24,7 +24,7 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
             className='w-full object-cover'
           />
         </figure>
-        <div className="flex flex-col gap-4 mb-4">
+        <div className='flex flex-col gap-4 mb-4'>
           <h1 className='text-3xl font-semibold'>{rocket.rocket_name}</h1>
           <p>{rocket.description}</p>
         </div>
@@ -42,7 +42,9 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
       </div>
       <div className='md:grid md:grid-cols-4 flex flex-col gap-4 col-span-2'>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold -mx-4 bg-base-200 -mt-4 p-2'>General</h3>
+          <h3 className='text-lg font-semibold -mx-4 bg-base-200 -mt-4 p-2'>
+            General
+          </h3>
           <p>
             <strong>Company:</strong> {rocket.company}
           </p>
@@ -64,7 +66,9 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
           </p>
         </div>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>Specifications</h3>
+          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>
+            Specifications
+          </h3>
           <p>
             <strong>Height:</strong> {rocket.height.meters} m (
             {rocket.height.feet} ft)
@@ -78,7 +82,9 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
           </p>
         </div>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>Payload Weights</h3>
+          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>
+            Payload Weights
+          </h3>
           {rocket.payload_weights.map(payload => (
             <p key={payload.id}>
               <strong>{payload.name}:</strong> {payload.kg} kg ({payload.lb} lb)
@@ -86,7 +92,9 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
           ))}
         </div>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>First Stage</h3>
+          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>
+            First Stage
+          </h3>
           <p>
             <strong>Engines:</strong> {rocket.first_stage.engines}
           </p>
@@ -100,7 +108,9 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
           </p>
         </div>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>Second Stage</h3>
+          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>
+            Second Stage
+          </h3>
           <p>
             <strong>Engines:</strong> {rocket.second_stage.engines}
           </p>
@@ -113,7 +123,9 @@ const Rocket: React.FC<IRocket> = ({rocket}) => {
           </p>
         </div>
         <div className='p-4 flex flex-col gap-3 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
-          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>Engines</h3>
+          <h3 className='text-lg font-semibold bg-base-200 -mx-4 -mt-4 p-2'>
+            Engines
+          </h3>
           <p>
             <strong>Type:</strong> {rocket.engines.type} (
             {rocket.engines.version})

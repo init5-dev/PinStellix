@@ -1,5 +1,4 @@
 export interface IRocket {
-  rocket: {
     id: number;
     active: boolean;
     stages: number;
@@ -97,7 +96,6 @@ export interface IRocket {
     rocket_id: string;
     rocket_name: string;
     rocket_type: string;
-  };
 }
 
 export interface IRocketCard {

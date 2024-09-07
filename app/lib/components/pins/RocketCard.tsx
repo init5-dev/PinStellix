@@ -5,16 +5,7 @@ import SocialShare from "../SocialShare";
 import { usePathname } from "next/navigation";
 import { IRocket } from "./types";
 
-interface RocketCardProps {
-  rocket: {
-    rocket_id: number;
-    rocket_name: string;
-    description: string;
-    flickr_images: string[];
-  };
-}
-
-const RocketCard: React.FC<IRocket> = ({ rocket }) => {
+const RocketCard = ({ rocket } : {rocket: IRocket}) => {
   const pathname = usePathname()
   const [currentUrl, setCurrentURL] = useState('')
 

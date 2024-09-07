@@ -15,7 +15,7 @@ type RocketPageProps = {
 const RocketPage = ({ params }: RocketPageProps) => {
   const [rocket, setRocket] = useState<IRocket | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState('')
 
   useEffect(() => {
     console.log('PARAMS:', params)
@@ -26,12 +26,15 @@ const RocketPage = ({ params }: RocketPageProps) => {
             `https://api.spacexdata.com/v3/rockets/${params.slug}`
           )
           if (!res.ok) {
-            throw new Error('Rocket not found')
+            setError('Rocket not found')
+            setLoading(false)
+            return
           }
           const data = await res.json()
           setRocket(data)
-        } catch (err: any) {
-          setError(err.message)
+        } catch (err) {
+          const error = err as Error
+          setError(error.message)
         } finally {
           setLoading(false)
         }
