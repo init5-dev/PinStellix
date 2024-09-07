@@ -100,7 +100,6 @@ export interface IRocket {
   };
 }
 
-
 export interface IRocketCard {
   rocket: {
     rocket_id: number;
@@ -108,4 +107,20 @@ export interface IRocketCard {
     description: string;
     flickr_images: string[];
   };
+}
+
+export interface ICapsule {
+  capsule_serial: string;
+  capsule_id: string;
+  status: 'unknown' | 'active' | 'retired' | 'destroyed';
+  original_launch: string | null;
+  original_launch_unix: number | null;
+  missions: Array<{
+    name: string;
+    flight: number;
+  }>;
+  landings: number;
+  type: string;
+  details: string | null;
+  reuse_count: number;
 }
