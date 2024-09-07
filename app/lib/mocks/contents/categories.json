@@ -1,0 +1,156 @@
+{
+  "nasa": [
+    {
+      "name": "APOD",
+      "icon": "/svg/sidebar/nasa/apod-icon.svg",
+      "href": "/nasa/apod"
+    },
+    {
+      "name": "Asteroids - NeoWs",
+      "icon": "/svg/sidebar/nasa/asteroids-neows-icon.svg",
+      "href": "/nasa/asteroids-neows"
+    },
+    {
+      "name": "DONKI",
+      "icon": "/svg/sidebar/nasa/donki-icon.svg",
+      "href": "/nasa/donki"
+    },
+    {
+      "name": "Earth",
+      "icon": "/svg/sidebar/nasa/earth-icon.svg",
+      "href": "/nasa/earth"
+    },
+    {
+      "name": "EONET",
+      "icon": "/svg/sidebar/nasa/eonet-icon.svg",
+      "href": "/nasa/eonet"
+    },
+    {
+      "name": "EPIC",
+      "icon": "/svg/sidebar/nasa/epic-icon.svg",
+      "href": "/nasa/epic"
+    },
+    {
+      "name": "Exoplanets",
+      "icon": "/svg/sidebar/nasa/exoplanets-icon.svg",
+      "href": "/nasa/exoplanets"
+    },
+    {
+      "name": "Open Science Data Repository",
+      "icon": "/svg/sidebar/nasa/open-science-data-icon.svg",
+      "href": "/nasa/open-science-data"
+    },
+    {
+      "name": "Mars Weather",
+      "icon": "/svg/sidebar/nasa/mars-weather-icon.svg",
+      "href": "/nasa/mars-weather"
+    },
+    {
+      "name": "Mars Rover Photos",
+      "icon": "/svg/sidebar/nasa/mars-rover-photos-icon.svg",
+      "href": "/nasa/mars-rover-photos"
+    },
+    {
+      "name": "Image and Video Library",
+      "icon": "/svg/sidebar/nasa/image-video-library-icon.svg",
+      "href": "/nasa/image-video-library"
+    },
+    {
+      "name": "TechTransfer",
+      "icon": "/svg/sidebar/nasa/techtransfer-icon.svg",
+      "href": "/nasa/techtransfer"
+    },
+    {
+      "name": "Satellite Situation Center",
+      "icon": "/svg/sidebar/nasa/satellite-situation-icon.svg",
+      "href": "/nasa/satellite-situation"
+    },
+    {
+      "name": "SSD/CNEOS",
+      "icon": "/svg/sidebar/nasa/ssd-cneos-icon.svg",
+      "href": "/nasa/ssd-cneos"
+    },
+    {
+      "name": "Techport",
+      "icon": "/svg/sidebar/nasa/techport-icon.svg",
+      "href": "/nasa/techport"
+    },
+    {
+      "name": "TLE API",
+      "icon": "/svg/sidebar/nasa/tle-api-icon.svg",
+      "href": "/nasa/tle-api"
+    },
+    {
+      "name": "Vesta/Moon/Mars Trek WMTS",
+      "icon": "/svg/sidebar/nasa/trek-wmts-icon.svg",
+      "href": "/nasa/trek-wmts"
+    }
+  ],
+  "spacex": [
+    {
+      "name": "Capsules",
+      "icon": "/svg/sidebar/spacex/capsule-icon.svg",
+      "href": "/spacex/capsules"
+    },
+    {
+      "name": "Cores",
+      "icon": "/svg/sidebar/spacexcore-icon.svg",
+      "href": "/spacex/cores"
+    },
+    {
+      "name": "Dragons",
+      "icon": "/svg/sidebar/spacexdragon-icon.svg",
+      "href": "/spacex/dragons"
+    },
+    {
+      "name": "History",
+      "icon": "/svg/sidebar/spacexhistory-icon.svg",
+      "href": "/spacex/history"
+    },
+    {
+      "name": "Info",
+      "icon": "/svg/sidebar/spacexinfo-icon.svg",
+      "href": "/spacex/info"
+    },
+    {
+      "name": "Landing Pads",
+      "icon": "/svg/sidebar/spacexlanding-pads-icon.svg",
+      "href": "/spacex/landing-pads"
+    },
+    {
+      "name": "Launches",
+      "icon": "/svg/sidebar/spacexlaunch-icon.svg",
+      "href": "/spacex/launches"
+    },
+    {
+      "name": "Launch Pads",
+      "icon": "/svg/sidebar/spacexlaunch-pads-icon.svg",
+      "href": "/spacex/launch-pads"
+    },
+    {
+      "name": "Missions",
+      "icon": "/svg/sidebar/spacexmissions-icon.svg",
+      "href": "/spacex/missions"
+    },
+    {
+      "name": "Payloads",
+      "icon": "/svg/sidebar/spacexpayload-icon.svg",
+      "href": "/spacex/payloads"
+    },
+    {
+      "name": "Rockets",
+      "icon": "/svg/sidebar/spacexrocket-icon.svg",
+      "href": "/spacex/rockets"
+    },
+    {
+      "name": "Roadster",
+      "icon": "/svg/sidebar/spacexroadster-icon.svg",
+      "href": "/spacex/roadster"
+    },
+    {
+      "name": "Ships",
+      "icon": "/svg/sidebar/spacexship-icon.svg",
+      "href": "/spacex/ships"
+    }
+  ]
+}
