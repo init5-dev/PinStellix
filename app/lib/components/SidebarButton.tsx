@@ -1,8 +1,19 @@
+'use client'
+
+import useSWR from "swr"
 import { ISidebarCategory } from "./types"
+import Loading from "./Loading"
 
 const SidebarButton = ({ name, href }: ISidebarCategory) => {
+  let hrefExists = true
+  const {data, error, isLoading} = useSWR(href, fetch)
+
+  if (isLoading) return <Loading />
+
+  if (data?.status !== 200 || error) hrefExists = false
+
   return (
-    <a className='btn bt-lg h-24 w-36 bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm' href={href}>
+    <a className={`btn bt-lg ${!hrefExists && 'btn-disabled'} h-24 w-36 bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm`} href={href}>
       <div className=' flex flex-col items-center justify-center gap-2'>
         <svg
           xmlns='http://www.w3.org/2000/svg'
