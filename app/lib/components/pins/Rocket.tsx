@@ -18,7 +18,7 @@ const Rocket = ({ rocket }: { rocket: IRocket }) => {
       <div className='flex flex-col gap-4 col-span-1'>
         <figure>
           <img
-            src={rocket.flickr_images[0]}
+            src={rocket.flickr_images[0] ? rocket.flickr_images[0] : '/No-image.png'}
             alt={rocket.rocket_name}
             width={640}
             height={480}
