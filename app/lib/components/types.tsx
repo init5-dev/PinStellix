@@ -8,3 +8,4 @@ export interface ISidebarGroup {
   name: string
   categories: ISidebarCategory[]
 }
+

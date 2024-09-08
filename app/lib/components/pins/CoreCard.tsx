@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import SocialShare from '../SocialShare'
 import { usePathname } from 'next/navigation'
-import { ICapsule } from './types'
-import { format } from 'date-fns'
+import SocialShare from '../SocialShare'
+import { ICore } from "./types"
 
-const CapsuleCard = ({ capsule }: { capsule: ICapsule }) => {
+const CoreCard = ({ core }: { core: ICore }) => {
   const pathname = usePathname()
   const [currentUrl, setCurrentURL] = useState('')
 
@@ -17,25 +16,23 @@ const CapsuleCard = ({ capsule }: { capsule: ICapsule }) => {
   return (
     <div className='flex flex-col gap-4 p-4 rounded-sm bg-opacity-50 hover:bg-opacity-15 backdrop-blur-[2px] shadow-sm shadow-gray-900'>
       <div className='flex flex-col gap-4 mb-4'>
-        <h2 className='text-3xl font-semibold'>{capsule.capsule_serial}</h2>
+        <h2 className='text-3xl font-semibold'>{core.serial}</h2>
         <p>
-          <b>ID: </b>
-          {capsule.capsule_id}
+          <b>Block: </b>
+          {core.block}
         </p>
         <p className='break-words line-clamp-1'>
-          <b>Details: </b>
-          {capsule.details ? capsule.details : 'N\\A'}
+          <b>Last Update: </b>
+          {core.last_update ? core.last_update : 'N\\A'}
         </p>
         <p>
-          <b>Original launch: </b>
-          {capsule.original_launch
-            ? format(capsule.original_launch, 'MMMM dd, yyyy')
-            : 'N\\A'}
+          <b>Status: </b>
+          {core.status}
         </p>
       </div>
       <div className='flex items-center justify-between gap-4'>
         <a
-          href={`/spacex/capsules/${capsule.capsule_serial}`}
+          href={`/spacex/cores/${core.serial}`}
           className='btn btn-primary'
         >
           Take a look!
@@ -46,4 +43,4 @@ const CapsuleCard = ({ capsule }: { capsule: ICapsule }) => {
   )
 }
 
-export default CapsuleCard
+export default CoreCard

@@ -1,101 +1,101 @@
 export interface IRocket {
-    id: number;
-    active: boolean;
-    stages: number;
-    boosters: number;
-    cost_per_launch: number;
-    success_rate_pct: number;
-    first_flight: string;
-    country: string;
-    company: string;
-    height: {
-      meters: number;
-      feet: number;
+  id: number;
+  active: boolean;
+  stages: number;
+  boosters: number;
+  cost_per_launch: number;
+  success_rate_pct: number;
+  first_flight: string;
+  country: string;
+  company: string;
+  height: {
+    meters: number;
+    feet: number;
+  };
+  diameter: {
+    meters: number;
+    feet: number;
+  };
+  mass: {
+    kg: number;
+    lb: number;
+  };
+  payload_weights: {
+    id: string;
+    name: string;
+    kg: number;
+    lb: number;
+  }[];
+  first_stage: {
+    reusable: boolean;
+    engines: number;
+    fuel_amount_tons: number;
+    burn_time_sec: number;
+    thrust_sea_level: {
+      kN: number;
+      lbf: number;
     };
-    diameter: {
-      meters: number;
-      feet: number;
+    thrust_vacuum: {
+      kN: number;
+      lbf: number;
     };
-    mass: {
-      kg: number;
-      lb: number;
+  };
+  second_stage: {
+    reusable: boolean;
+    engines: number;
+    fuel_amount_tons: number;
+    burn_time_sec: number;
+    thrust: {
+      kN: number;
+      lbf: number;
     };
-    payload_weights: {
-      id: string;
-      name: string;
-      kg: number;
-      lb: number;
-    }[];
-    first_stage: {
-      reusable: boolean;
-      engines: number;
-      fuel_amount_tons: number;
-      burn_time_sec: number;
-      thrust_sea_level: {
-        kN: number;
-        lbf: number;
-      };
-      thrust_vacuum: {
-        kN: number;
-        lbf: number;
-      };
-    };
-    second_stage: {
-      reusable: boolean;
-      engines: number;
-      fuel_amount_tons: number;
-      burn_time_sec: number;
-      thrust: {
-        kN: number;
-        lbf: number;
-      };
-      payloads: {
-        option_1: string;
-        option_2: string;
-        composite_fairing: {
-          height: {
-            meters: number;
-            feet: number;
-          };
-          diameter: {
-            meters: number;
-            feet: number;
-          };
+    payloads: {
+      option_1: string;
+      option_2: string;
+      composite_fairing: {
+        height: {
+          meters: number;
+          feet: number;
+        };
+        diameter: {
+          meters: number;
+          feet: number;
         };
       };
     };
-    engines: {
-      number: number;
-      type: string;
-      version: string;
-      layout: string;
-      isp: {
-        sea_level: number;
-        vacuum: number;
-      };
-      engine_loss_max: number;
-      propellant_1: string;
-      propellant_2: string;
-      thrust_sea_level: {
-        kN: number;
-        lbf: number;
-      };
-      thrust_vacuum: {
-        kN: number;
-        lbf: number;
-      };
-      thrust_to_weight: number;
+  };
+  engines: {
+    number: number;
+    type: string;
+    version: string;
+    layout: string;
+    isp: {
+      sea_level: number;
+      vacuum: number;
     };
-    landing_legs: {
-      number: number;
-      material: string;
+    engine_loss_max: number;
+    propellant_1: string;
+    propellant_2: string;
+    thrust_sea_level: {
+      kN: number;
+      lbf: number;
     };
-    flickr_images: string[];
-    wikipedia: string;
-    description: string;
-    rocket_id: string;
-    rocket_name: string;
-    rocket_type: string;
+    thrust_vacuum: {
+      kN: number;
+      lbf: number;
+    };
+    thrust_to_weight: number;
+  };
+  landing_legs: {
+    number: number;
+    material: string;
+  };
+  flickr_images: string[];
+  wikipedia: string;
+  description: string;
+  rocket_id: string;
+  rocket_name: string;
+  rocket_type: string;
 }
 
 export interface IRocketCard {
@@ -222,4 +222,28 @@ export interface IShip {
   name: string;
   active: boolean;
   id: string;
+}
+
+export interface ICore {
+  block: number
+  reuse_count: number
+  rtls_attempts: number
+  rtls_landings: number
+  asds_attempts: number
+  asds_landings: number
+  last_update: string
+  launches: string[]
+  serial: string
+  status: string
+  id: string
+}
+
+export interface IHistory {
+  title: string
+  event_date_utc: string
+  details: string
+  links: {
+    article: string
+  }
+  id: string
 }

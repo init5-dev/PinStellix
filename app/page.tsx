@@ -3,7 +3,7 @@ import Image from 'next/image'
 export default function Home () {
   return (
     <div className='grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-2 md:p-8 font-[family-name:var(--font-geist-sans)]'>
-      <main className='flex flex-col gap-6 md:gap-8 lg:gap-12 items-center sm:items-start w-full lg:max-w-3xl'>
+      <main className='flex flex-col gap-6 md:gap-6 items-center sm:items-start w-full lg:max-w-3xl'>
         <div className='w-full'>
           <Image
             layout='responsive'
@@ -127,8 +127,8 @@ export default function Home () {
         </section>
 
         <section className='bg-gray-800 text-gray-300 p-8 rounded-lg w-full max-w-4xl'>
-          <div className='flex flex-col md:grid md:grid-cols-2 gap-8'>
-            <div className='col-span-1'>
+          <div className='flex flex-col md:grid md:grid-cols-12 lg:grid-cols-2 gap-8'>
+            <div className='md:col-span-5 lg:col-span-1'>
               <Image
                 objectFit='cover'
                 width={400}
@@ -138,7 +138,7 @@ export default function Home () {
                 className='w-full rounded-lg shadow-lg'
               />
             </div>
-            <div className='col-span-1 -mt-2'>
+            <div className='md:col-span-7 lg:col-span-1 -mt-2'>
               <h3 className='text-3xl font-semibold mb-3'>Nelson Ochagavía</h3>
               <p className='text-justify text-gray-300'>
                 As a seasoned software developer with a deep focus on JavaScript

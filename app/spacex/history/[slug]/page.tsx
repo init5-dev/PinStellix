@@ -1,37 +1,36 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { ICapsule } from '@/app/lib/components/pins/types'
+import { IHistory } from "@/app/lib/components/pins/types"
 import Loading from '@/app/lib/components/Loading'
 import Error from '@/app/lib/components/Error'
-import Capsule from "@/app/lib/components/pins/Capsule"
+import History from "@/app/lib/components/pins/History"
 
-type CapsulePageProps = {
+type HistoryPageProps = {
   params: {
     slug: string
   }
 }
 
-const CapsulePage = ({ params }: CapsulePageProps) => {
-  const [capsule, setCapsule] = useState<ICapsule | null>(null)
+const HistoryPage = ({ params }: HistoryPageProps) => {
+  const [history, setHistory] = useState<IHistory | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
 
   useEffect(() => {
-    console.log('PARAMS:', params)
-    const fetchCapsule = async () => {
+    const fetchHistory = async () => {
       if (params.slug) {
         try {
           const res = await fetch(
-            `https://api.spacexdata.com/v3/capsules/${params.slug}`
+            `https://api.spacexdata.com/v4/history/${params.slug}`
           )
           if (!res.ok) {
-            setError('Capsule not found')
+            setError('History not found')
             setLoading(false)
             return
           }
           const data = await res.json()
-          setCapsule(data)
+          setHistory(data)
         } catch (err) {
           const error = err as Error
           setError(error.message)
@@ -41,7 +40,7 @@ const CapsulePage = ({ params }: CapsulePageProps) => {
       }
     }
 
-    fetchCapsule()
+    fetchHistory()
   }, [params])
 
   if (loading) {
@@ -52,11 +51,11 @@ const CapsulePage = ({ params }: CapsulePageProps) => {
     return <Error message={error} />
   }
 
-  if (!capsule) {
-    return <Error message='Capsule not found' />
+  if (!history) {
+    return <Error message='History not found' />
   }
 
-  return <Capsule capsule={capsule} />
+  return <History history={history} />
 }
 
-export default CapsulePage
+export default HistoryPage

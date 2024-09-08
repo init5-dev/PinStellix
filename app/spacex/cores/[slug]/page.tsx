@@ -1,50 +1,51 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { IShip } from '@/app/lib/components/pins/types'
+import { ICore } from "@/app/lib/components/pins/types"
 import Loading from '@/app/lib/components/Loading'
 import Error from '@/app/lib/components/Error'
-import Ship from "@/app/lib/components/pins/Ship"
+import Core from "@/app/lib/components/pins/Core"
 
-type ShipPageProps = {
+type CorePageProps = {
   params: {
     slug: string
   }
 }
 
-const ShipPage = ({ params }: ShipPageProps) => {
-  const [ship, setShip] = useState<IShip | null>(null)
+const CorePage = ({ params }: CorePageProps) => {
+  const [core, setCore] = useState<ICore | null>(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState('')
+  const [error, setError] = useState("")
 
   useEffect(() => {
-    const fetchShip = async () => {
+    const fetchCore = async () => {
       if (params.slug) {
         try {
           let res = await fetch(
-            `https://api.spacexdata.com/v4/ships`
+            `https://api.spacexdata.com/v4/cores`
           )
           
           if (!res.ok) {
-            setError('Ships not found')
+            setError('Cores not found')
             setLoading(false)
             return
           }
 
-          const ships = (await res.json()) as IShip[]
-          const id = ships.filter(ship => ship.name === params.slug.replaceAll('-', ' '))[0].id
+          const cores = (await res.json()) as ICore[]
+          const id = cores.filter(core => core.serial === params.slug.replaceAll('-', ' '))[0].id
+
+          console.log('ID:', id)
 
           res = await fetch(
-            `https://api.spacexdata.com/v4/ships/${id}`
+            `https://api.spacexdata.com/v4/cores/${id}`
           )
-
           if (!res.ok) {
-            setError('Ship not found')
+            setError('Core not found')
             setLoading(false)
             return
           }
           const data = await res.json()
-          setShip(data)
+          setCore(data)
         } catch (err) {
           const error = err as Error
           setError(error.message)
@@ -54,7 +55,7 @@ const ShipPage = ({ params }: ShipPageProps) => {
       }
     }
 
-    fetchShip()
+    fetchCore()
   }, [params])
 
   if (loading) {
@@ -65,11 +66,11 @@ const ShipPage = ({ params }: ShipPageProps) => {
     return <Error message={error} />
   }
 
-  if (!ship) {
-    return <Error message='Ship not found' />
+  if (!core) {
+    return <Error message='Core not found' />
   }
 
-  return <Ship ship={ship} />
+  return <Core core={core} />
 }
 
-export default ShipPage
+export default CorePage
