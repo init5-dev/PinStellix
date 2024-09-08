@@ -17,8 +17,7 @@ const LandingPad = ({ landingPad }: {landingPad: ILandingPad}) => {
     landing_attempts,
     landing_successes,
     wikipedia,
-    details,
-    launches
+    details
   } = landingPad
 
   const pathname = usePathname()

@@ -5,7 +5,9 @@ export interface ISidebarCategory {
 }
 
 export interface ISidebarGroup {
-  name: string
+  name?: string
+  href?: string
   categories: ISidebarCategory[]
+  smCols?: number
+  mdCols?: number
 }
-

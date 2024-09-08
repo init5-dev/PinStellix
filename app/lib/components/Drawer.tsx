@@ -44,7 +44,7 @@ const Drawer: React.FC<{
               X
             </label>
           </header>
-          <SidebarGroup name='SpaceX' categories={categories.spacex} />
+          <SidebarGroup name='SpaceX' href="/spacex" categories={categories.spacex} />
           <SidebarGroup name='NASA' categories={categories.nasa} />
         </div>
       </div>
