@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation"
 
-const Breadcrumb = () => {
+const Breadcrumb = ({slugReplacement = ''} : {slugReplacement?: string}) => {
   const pathname = usePathname()
   const pathTokens = pathname.split('/').slice(1)
   pathTokens.unshift('Inicio')
@@ -23,7 +23,7 @@ const Breadcrumb = () => {
               <a href={i == 0? '/' : '/' + pathTokens.slice(1, i+1).join('/')}>{capitalize(token)}</a>
             </li>
           ) : (
-            <li key={i}><span className="font-semibold">{capitalize(token)}</span></li>
+            <li key={i}><span className="font-semibold">{capitalize(slugReplacement ? slugReplacement : token)}</span></li>
           )
         )}
       </ul>
