@@ -31,7 +31,7 @@ const ShipsPage: React.FC = () => {
   }
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='container mx-auto'>
       <h1 className='text-4xl font-semibold mb-8'>SpaceX Ships</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {ships.map((ship) => (

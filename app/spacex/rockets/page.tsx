@@ -11,10 +11,9 @@ const RocketsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch rockets data from API or service
     const fetchRockets = async () => {
       try {
-        const response = await fetch('https://api.spacexdata.com/v3/rockets'); // Replace with your actual API endpoint
+        const response = await fetch('https://api.spacexdata.com/v3/rockets'); 
         const data = await response.json();
         setRockets(data);
       } catch (error) {
@@ -32,7 +31,7 @@ const RocketsPage: React.FC = () => {
   }
 
   return (
-    <div className='container mx-auto p-4'>
+    <div className='container mx-auto'>
       <h1 className='text-4xl font-semibold mb-8'>SpaceX Rockets</h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {rockets.map((rocket) => (

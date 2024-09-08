@@ -22,7 +22,7 @@ const Drawer: React.FC<{
       <div className='drawer-content'>
         <Navbar />
         <Breadcrumb />
-        <div className='px-4 flex-grow'>{children}</div>
+        <div className='px-2 md:px-4 flex-grow'>{children}</div>
         <Footer />
       </div>
       <div className='drawer-side z-50'>
