@@ -108,11 +108,6 @@
       "href": "/spacex/history"
     },
     {
-      "name": "Info",
-      "icon": "/svg/sidebar/spacexinfo-icon.svg",
-      "href": "/spacex/info"
-    },
-    {
       "name": "Landing Pads",
       "icon": "/svg/sidebar/spacexlanding-pads-icon.svg",
       "href": "/spacex/landing-pads"
