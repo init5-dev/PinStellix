@@ -29,13 +29,17 @@ const Drawer: React.FC<{
         <label htmlFor='my-drawer' className='drawer-overlay'></label>
         <div className='menu w-full lg:w-auto bg-base-200 bg-opacity-75 backdrop-blur-[2px] text-base-content min-h-full p-4'>
           <header className='flex items-center justify-between pl-4'>
+            <a href="/">
             <Image
               src='/Planet.png'
               width={56}
               height={56}
               alt='PinStellix Logo'
             />
+            </a>
+            <a href="/">
             <span className='text-3xl font-semibold -ml-6'>PinStellix</span>
+            </a>
             <label className='btn btn-square btn-ghost' onClick={close}>
               X
             </label>

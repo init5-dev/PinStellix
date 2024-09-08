@@ -23,9 +23,16 @@ const Navbar = () => {
           </svg>
         </label>
       </div>
-      <div className='w-full flex justify-center'>
-        <Image src='/Planet.png' width={48} height={48} alt='PinStellix Logo'/>
-        <a className='btn btn-ghost text-3xl'>PinStellix</a>
+      <div className='flex justify-center w-full'>
+        <a href='/' className="flex items-center gap-2">
+          <Image
+            src='/Planet.png'
+            width={48}
+            height={48}
+            alt='PinStellix Logo'
+          />
+          <span className='text-3xl font-semibold'>PinStellix</span>
+        </a>
       </div>
       <div className='flex-none'>
         <button className='btn btn-square btn-ghost'>
